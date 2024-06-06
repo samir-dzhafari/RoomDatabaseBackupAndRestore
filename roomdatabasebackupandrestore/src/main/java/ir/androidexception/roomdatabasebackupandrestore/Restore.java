@@ -83,7 +83,7 @@ public class Restore {
                                 query = query.concat("NULL").concat(",");
                             }
                             else{
-                                query = query.concat("\'").concat(value).concat("\'").concat(",");
+                                query = query.concat("\'").concat(preparingValue(value)).concat("\'").concat(",");
                             }
                         }
                         query = query.substring(0,query.lastIndexOf(","));
@@ -100,6 +100,11 @@ public class Restore {
                     onWorkFinishListener.onFinished(false, e.toString());
             }
         }
+
+        private String preparingValue(String input) {
+            return input.replace("'", "''");
+        }
+
     }
 
     private static String convertStreamToString(InputStream is) throws Exception {
