@@ -1,4 +1,7 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'maven-publish'
+}
 
 android {
     compileSdkVersion 29
@@ -34,4 +37,12 @@ dependencies {
     annotationProcessor 'androidx.room:room-compiler:2.2.3'
     implementation 'com.google.code.gson:gson:2.8.5'
     compile project(path: ':roomdatabasebackupandrestore')
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
