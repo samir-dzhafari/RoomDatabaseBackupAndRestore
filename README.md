@@ -32,7 +32,7 @@ Step 2. Add the dependency
 
 ```gradle
 dependencies {
-	implementation 'com.github.salehyarahmadi:RoomDatabaseBackupAndRestore:v1.0.1'
+	implementation 'com.github.samir-dzhafari:RoomDatabaseBackupAndRestore:v0.0.1'
 }
 ```
 
